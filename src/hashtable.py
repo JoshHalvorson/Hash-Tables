@@ -28,7 +28,7 @@ class HashTable:
         hash = 0
         for i in range(0, len(key)):
             hash += ord(key[i])
-        return hash % 32
+        return hash % self.capacity
 
 
     def _hash_djb2(self, key):
@@ -134,6 +134,8 @@ if __name__ == "__main__":
     print(ht.retrieve("key-6"))
     print(ht.retrieve("key-7"))
     #print(ht.retrieve("key-8"))
+    for item in ht.storage:
+        print(item.key)
     ht.remove("key-0") 
     print(ht.retrieve("key-0"))
 
